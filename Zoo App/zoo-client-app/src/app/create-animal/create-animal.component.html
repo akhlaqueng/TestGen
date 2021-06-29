@@ -1,0 +1,26 @@
+<h3>Add Animal</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+<div class="form-group">
+      <label for="name">Animal Name</label>
+      <input type="text" class="form-control" id="animalname" required [(ngModel)="animal.animalname" name="animalname">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Animal Type</label>
+      <input type="text" class="form-control" id="animaltype" required [(ngModel)]="animal.animaltype" name="animaltype">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Quantity</label>
+      <input type="text" class="form-control" id="quantity" required [(ngModel)]="animal.quantity" name="quantity">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

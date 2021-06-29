@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Animals List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Animal Name</th>
+          <th>Animal Type</th>
+          <th>Species</th>
+          <th>Pen Area</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let animal of animals | async">
+          <td>{{animal.aname}}</td>
+          <td>{{animal.atype }}</td>
+          <td>{{animal.aspecies }}</td>
+          <td>{{animal.parea }}</td>
+          <td>{{animal.count}}</td>
+          <td><button (click)="deleteAnimal(animal.id)" class="btn btn-danger">Delete</button>
+              <button (click)="updateAnimal(animal.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="animalDetails(animal.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
